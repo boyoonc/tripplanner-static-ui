@@ -4,6 +4,7 @@ const conn = new Sequelize(process.env.DATABASE_URL, {
   logging: false
   });
 
+  //Models
 const Place = conn.define('place',{
   address: Sequelize.STRING,
   city: Sequelize.STRING,
@@ -33,6 +34,7 @@ Hotel.belongsTo(Place);
 Activity.belongsTo(Place);
 Restaurant.belongsTo(Place);
 
+//db funcs
 const sync = ()=> {
   return conn.sync({ force: true });
 };
