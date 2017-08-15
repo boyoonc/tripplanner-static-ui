@@ -3,10 +3,10 @@
 
 var Promise = require('bluebird');
 var db = require('./models');
-var Place = require('./models/place');
-var Hotel = require('./models/hotel');
-var Restaurant = require('./models/restaurant');
-var Activity = require('./models/activity');
+var Place = db.Place;
+var Hotel = db.Hotel;
+var Restaurant = db.Restaurant;
+var Activity = db.Activity;
 
 var data = {
   hotels: [
@@ -81,8 +81,4 @@ db.sync({force: true})
 })
 .catch(function (err) {
   console.error('There was totally a problem', err, err.stack);
-})
-.finally(function () {
-  db.close(); // creates but does not return a promise
-  return null; // stops bluebird from complaining about un-returned promise
 });

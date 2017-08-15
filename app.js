@@ -33,14 +33,14 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 3000;
-models.sync()
-  .then(() => {
-    console.log('hello');
-    return models.seed()
-      .then(() => {
-        console.log('seeded');
+// models.sync()
+//   .then(() => {
+//     console.log('hello');
+//     return models.seed()
+//       .then(() => {
+//         console.log('seeded');
         app.listen(port, () => {
           console.log(`listening on port ${port}`);
         });
-      });
-  });
+      // });
+  // });

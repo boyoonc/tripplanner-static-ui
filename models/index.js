@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const conn = new Sequelize(process.env.DATABASE_URL, {
+const conn = new Sequelize('postgres://localhost:5432/tripplanner_db', {
   logging: false
   });
 
@@ -48,7 +48,8 @@ const seed = () => {
 module.exports = {
   sync,
   seed,
-  models: {
-    Place
-  }
+  Place,
+  Hotel,
+  Activity,
+  Restaurant
 };
