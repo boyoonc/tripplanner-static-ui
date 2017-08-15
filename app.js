@@ -3,13 +3,13 @@ const path = require('path');
 const nunjucks = require('nunjucks');
 const models = require('./models');
 const morgan = require('morgan');
-const body_parser = require('body-parser');
+const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(morgan('tiny'))
-app.use(body_parser.urlencoded({ extended: false }))
-app.use(body_parser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
