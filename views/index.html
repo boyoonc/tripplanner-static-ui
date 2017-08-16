@@ -1,6 +1,18 @@
-{% extends './layout.html' %}
-{% block content %}
-<div>
-  Stuff goes here..
-</div>
-{% endblock %}
+{% extends './layout.html' %} {% block content %}
+  <select>
+    {% for r in restaurants %}
+    <option>{{r.name}}</option>
+    {% endfor %}
+  </select>
+
+  <select>
+      {% for h in hotels %}
+      <option>{{h.name}}</option>
+      {% endfor %}
+    </select>
+
+  <select>
+        {% for a in activities %}
+        <option>{{a.name}}</option>
+        {% endfor %}
+      </select> {% endblock %}

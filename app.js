@@ -19,7 +19,19 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res, next) => {
-  res.render('index');
+  Promise.all([models.Restaurant.findAll(), models.Hotel.findAll(), models.Activity.findAll()])
+    .then(result => {
+      res.render('index', {restaurants: result[0], hotels: result[1], activities: result[2]})
+    })
+  // models.Hotel.findAll()
+  //   .then((hotels) => {
+  //     return models.Restaurant.findAll()
+  //       .then((restaurants) => {
+  //         return models.Activity.findAll()
+  //       }).then((activities) => {
+  //         console.log(hotels)
+  //       })
+  //   })
 });
 
 app.use((req, res, next) => {
@@ -33,14 +45,8 @@ app.use((err, req, res, next) => {
 });
 
 const port = process.env.PORT || 3000;
-// models.sync()
-//   .then(() => {
-//     console.log('hello');
-//     return models.seed()
-//       .then(() => {
-//         console.log('seeded');
-        app.listen(port, () => {
-          console.log(`listening on port ${port}`);
-        });
-      // });
-  // });
+
+app.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});
+
