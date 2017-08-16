@@ -4,7 +4,7 @@ const nunjucks = require('nunjucks');
 const models = require('./models');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
-
+// const bootstrap = require('bootstrap');
 const app = express();
 
 app.use(morgan('tiny'))
@@ -16,22 +16,14 @@ app.engine('html', nunjucks.render);
 nunjucks.configure('views', { nocache: true })
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
-
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
+app.use('/jquery', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 app.get('/', (req, res, next) => {
   Promise.all([models.Restaurant.findAll(), models.Hotel.findAll(), models.Activity.findAll()])
     .then(result => {
       res.render('index', {restaurants: result[0], hotels: result[1], activities: result[2]})
     })
-  // models.Hotel.findAll()
-  //   .then((hotels) => {
-  //     return models.Restaurant.findAll()
-  //       .then((restaurants) => {
-  //         return models.Activity.findAll()
-  //       }).then((activities) => {
-  //         console.log(hotels)
-  //       })
-  //   })
 });
 
 app.use((req, res, next) => {

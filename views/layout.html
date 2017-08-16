@@ -1,11 +1,17 @@
 <html>
-  <head>
-    <title>Tripplanner Static UI</title>
-    <link rel='stylesheet' href='/public/stylesheets/styles.css' />
-  </head>
-  <body>
-    <h1>Tripplanner Static UI</h1>
-    {% block content %}
-    {% endblock %}
-  </body>
+
+<head>
+  <title>Tripplanner Static UI</title>
+  <link rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/public/stylesheets/stylesheet.css' />
+
+</head>
+
+<body class = 'container'>
+  <div class ='navbar navbar-inverse'> Navbar </div>
+  {% block content %} {% endblock %}
+</body>
+<script type='text/javascript' src='/jquery/jquery.min.js'></script>
+<script type='text/javascript' src='/bootstrap/js/bootstrap.min.js'></script>
+
 </html>

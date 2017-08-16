@@ -1,18 +1,29 @@
 {% extends './layout.html' %} {% block content %}
+
+<ul class = 'options'>
+  <li>
+    <p>Restaurants</p>
   <select>
     {% for r in restaurants %}
     <option>{{r.name}}</option>
     {% endfor %}
   </select>
-
+  </li>
+  <li>
+    <p>Hotels</p>
   <select>
       {% for h in hotels %}
       <option>{{h.name}}</option>
       {% endfor %}
     </select>
-
+  </li>
+  <li>
+    <p>Activities</p>
   <select>
         {% for a in activities %}
         <option>{{a.name}}</option>
         {% endfor %}
-      </select> {% endblock %}
+      </select>
+  </li>
+</ul>
+{% endblock %}
