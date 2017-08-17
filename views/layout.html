@@ -1,17 +1,26 @@
-<html>
+<!DOCTYPE html>
 
 <head>
   <title>Tripplanner Static UI</title>
   <link rel='stylesheet' href='/bootstrap/css/bootstrap.min.css' />
   <link rel='stylesheet' href='/public/stylesheets/stylesheet.css' />
-
 </head>
 
-<body class = 'container'>
-  <div class ='navbar navbar-inverse'> Navbar </div>
+<body>
+  <nav class="navbar navbar-light nav h4">
+    <a href='#' class='navbar navbar-brand'> Trip Planner <span class = 'glyphicon glyphicon-tent'></span> </a>
+    <ul class="nav navbar-nav">
+      <li><a href="#" class='navbar'>Home</a></li>
+      <li><a href="#" class='navbar'>About</a></li>
+      <li><a href="#" class='navbar'>Contact</a></li>
+    </ul>
+  </nav>
   {% block content %} {% endblock %}
+
+  <script type='text/javascript' src='/jquery/jquery.min.js'></script>
+  <script type='text/javascript' src='/bootstrap/js/bootstrap.min.js'></script>
+  {% block script %} {% endblock %}
+
 </body>
-<script type='text/javascript' src='/jquery/jquery.min.js'></script>
-<script type='text/javascript' src='/bootstrap/js/bootstrap.min.js'></script>
 
 </html>

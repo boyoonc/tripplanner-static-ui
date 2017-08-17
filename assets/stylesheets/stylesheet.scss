@@ -1,20 +1,76 @@
 body{
-    background-color:gray;
+    background-color:#d3d3d3;
 }
+ 
+
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+#map {
+    height: 90vh;
+    width: 100%;
+    margin: 1%;
+  }
 
 .navbar{
-    color:white;
+    background-color: darken(brown,10%);
+    color: white;
+    margin: 0 auto;
+    padding-left:2%;
 }
 
 .options{
-    float:right;
-    background-color: brown;
+    background-color: #D2B48C;
     list-style: none;
-    padding: 1%;
-    padding-bottom: 2%;
+    padding: 4%;
+    padding-bottom: 8%;
+    font-size:1.75em;
+    width: 90%;
+    margin: 2% auto;
     
 }
 
 select{
-    width: 100%;
+    width: 80%;
+}
+
+.itinerary-header{
+    font-size:3em;
+}
+
+.day-buttons{
+    padding: 2%;
+    background-color: orange;
+    font-size: 2em;
+}
+
+.itinerary-items{
+    background-color: lighten( #3CB371, 20%);
+    font-size:2em;
+    height:100%;
+    padding: 4%;
+}
+
+.itinerary-items li{
+    font-size: .7em;
+    list-style: none;
+    
+}
+
+.itinerary-items button{
+    float:right;
+}
+
+.day-buttons button{
+    border-radius: 50%;
+}
+
+.itinerary{
+    width: 90%;
+    margin: 0 auto;
 }
